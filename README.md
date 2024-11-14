@@ -3,7 +3,7 @@
 Detect Pallets in a warehouse or workshop environment
 
 ## Rough Demo
-
+https://github.com/user-attachments/assets/018108a8-dd86-4a20-8809-c0c31a2205c7
 ## How to use
 
 assuming that ```/opt/ros/<distro>/setup.bash``` is sourced
