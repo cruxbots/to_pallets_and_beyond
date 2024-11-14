@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pallete_detector = to_pallete_and_beyond.pallete_detector:main'
+            'pallete_detector = to_pallete_and_beyond.pallete_detector:main',
+            'simulated_camera = to_pallete_and_beyond.simulated_camera:main'
         ],
     },
 )
