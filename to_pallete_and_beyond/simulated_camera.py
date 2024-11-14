@@ -7,7 +7,6 @@ from cv_bridge import CvBridge
 import cv2
 import os
 import glob
-# from ultralytics import YOLO
 
 class ImagePublisherNode(Node):
     def __init__(self, image_directory, publish_rate=1.0):
