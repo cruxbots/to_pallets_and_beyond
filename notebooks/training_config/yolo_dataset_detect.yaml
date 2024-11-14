@@ -1,4 +1,4 @@
-path: ./yolo_dataset  # dataset root dir
+path: ./yolo_dataset_detect  # dataset root dir
 train: ./train
 val: ./val
 test: ./test

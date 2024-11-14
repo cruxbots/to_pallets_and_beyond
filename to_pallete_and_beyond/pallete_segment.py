@@ -11,7 +11,7 @@ import numpy as np
 
 class PalletDetectorNode(Node):
     def __init__(self):
-        super().__init__('pallete_detector')
+        super().__init__('pallete_segment')
 
         # Set up image subscriber and mask publisher
         self.image_subscriber = self.create_subscription(
