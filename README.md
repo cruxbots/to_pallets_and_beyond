@@ -4,7 +4,7 @@ Detect Pallets in a warehouse or workshop environment
 
 ## Rough Demo
 https://github.com/user-attachments/assets/018108a8-dd86-4a20-8809-c0c31a2205c7
-## How to use
+## Installation
 
 assuming that ```/opt/ros/<distro>/setup.bash``` is sourced
 
@@ -60,3 +60,34 @@ TO DO: fix all of this
 1. if you are getting some error regarding ultralytics not being installed try rosdep or install it globally
 
 2. Due to poor memory management, there are some some memory leakage in notebook codes so may need to restart the system.
+
+## How to Use
+
+#### 1. source ROS
+
+```bash
+cd /path/to/ros/package
+source /opt/ros/$ROS_DISTRO/setup.bash
+source install/setup.bash
+```
+
+#### 2. Run using simulated camera
+
+
+```bash
+ros2 run to_pallete_and_beyond simulated_camera
+```
+
+Run pallete detect
+open a new terminal window and repeat step 1 and then run:
+
+```bash
+ros2 run to_pallete_and_beyond pallete_detect
+```
+
+Run Pallete segment
+open a new terminal window and repeat step 1 and then run:
+
+```bash
+ros2 run to_pallete_and_beyond pallete_segment
+```
