@@ -11,7 +11,7 @@ import glob
 class ImagePublisherNode(Node):
     def __init__(self, image_directory, publish_rate=1.0):
         super().__init__('simulated_camera')
-        self.image_publisher = self.create_publisher(Image, 'image_topic', 10)
+        self.image_publisher = self.create_publisher(Image, '/robot1/zed2i/left/image_rect_color', 10)
         self.timer = self.create_timer(1.0 / publish_rate, self.publish_image)
         self.bridge = CvBridge()
 

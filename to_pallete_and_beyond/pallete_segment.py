@@ -8,6 +8,9 @@ import cv2
 from ultralytics import YOLO
 import numpy as np
 
+from pathlib import Path
+from ament_index_python.packages import get_package_share_directory
+
 class PalletDetectorNode(Node):
     def __init__(self):
         super().__init__('pallete_segment')
@@ -15,15 +18,18 @@ class PalletDetectorNode(Node):
         # Set up image subscriber and mask publisher
         self.image_subscriber = self.create_subscription(
             Image,
-            'image_topic',
+            '/robot1/zed2i/left/image_rect_color',
             self.image_callback,
             10)
         
         self.pallete_mask_publisher = self.create_publisher(Image, 'pallete_mask_topic', 10)
         self.ground_mask_publisher = self.create_publisher(Image, 'ground_mask_topic', 10)
+        package_dir = Path(
+            get_package_share_directory('to_pallete_and_beyond')
+            ).parent.parent.parent.parent
         
         # Set up YOLO model with specified weights
-        model_weights_path = '/home/rahul/to_pallet_and_beyond/ros2_ws/src/to_pallete_and_beyond/weights/runs/segment/train/weights/best.pt'  # Update this path
+        model_weights_path = package_dir / "src" /"to_pallete_and_beyond" / "yolo_weights" / "pallete_segment_weights.pt"  # Update this path
         self.model = YOLO(model_weights_path)
         self.bridge = CvBridge()
 
